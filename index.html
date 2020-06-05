@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html lan="en">
+
+
+<head>
+
+    <title> To Do List </title>
+ 
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+     <meta charset="UTF-8">
+    
+     <link href="style.css" type="text/css" rel="stylesheet">
+    
+    <link rel="icon" type="image/png" href="2611.png">  
+    
+    <link href="https://fonts.googleapis.com/css2?family=Crete+Round&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+
+</head>
+
+
+
+
+<body>
+
+
+<div id="myDIV" class="header">
+
+<h2> My To Do List </h2>
+
+<input type="text" id="myInput"  placeholder="Title...">
+
+<span onclick="newElement()" class="addBtn"> Add </span>
+
+</div>
+
+<ul id="myUL">
+
+<li> Buy potatoes </li>
+<li class="checked"> Pay water and electricity </li>
+<li> Meet Lola </li>
+<li> Buy milk </li>
+<li> Read Book </li>
+<li> Organize room </li>
+
+    </ul>   
+    
+    <br> <br>
+    
+     <div class="calendar">
+         
+  <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23A79B8E&amp;ctz=Europe%2FLondon&amp;src=cnVxM3BvYWJwaWdjb3ZmMW1xZWtjNDY0NGNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23009688&amp;showNav=1&amp;showPrint=0&amp;showTabs=0&amp;showTitle=0" style="border-width:0" width="850" height="600" frameborder="0" scrolling="no"></iframe>
+   
+    </div>
+    
+    
+    
+    
+    
+    <script>
+    
+    var myNodelist = document.getElementsByTagName("LI");
+    var i;
+    for (i = 0; i < myNodelist.length; i++) {
+    var span = document.createElement("SPAN");
+    var txt = document.createTextNode("\u00D7");
+    span.className = "close";
+    span.appendChild(txt);
+    myNodelist[i].appendChild(span);
+        
+    }
+    
+      
+   var close = document.getElementsByClassName("close");
+   for(i = 0; i < close.length; i++){
+    close[i].onclick = function(){
+       var div = this.parentElement;
+        div.style.display = "none";
+         
+     }   
+        
+    }
+      
+        
+      
+   var list = document.querySelector('ul');
+    list.addEventListener('click', function(ev) {
+     if(ev.target.tagName === 'LI') {
+      ev.target.classList.toggle('checked');  
+    }   
+        
+}, false);
+      
+     
+      
+      // create a new list item when clicking on the add button
+    
+     function newElement() {
+       
+    var li = document.createElement("li");
+       
+    var inputValue = document.getElementById("myInput").value;
+    var t = document.createTextNode(inputValue);
+    li.appendChild(t);
+       
+    if(inputValue === '') {
+        
+    alert("You must write something!");
+        
+    } else {
+        
+    document.getElementById("myUL").appendChild(li);  
+    }
+    
+    document.getElementById("myInput").value = "";
+       
+     var span = document.createElement("SPAN");
+     var txt = document.createTextNode("\u00D7");
+     span.className =  "close";
+     span.appendChild(txt);
+     li.appendChild(span);
+    
+       
+     for(i = 0; i < close.length; i++) {
+        close[i].onclick = function(){
+          var div = this.parentElement;
+           div.style.display = "none";
+            
+        }
+         
+     } 
+       
+   }  
+    
+    
+    </script>
+    
+    
+    
+
+</body>
+
+
+
+
+
+
+
+
+
+<html>
