@@ -1,1 +1,1 @@
-# todolist is a simple web app to write "to do things" on a list format. Made using HTML/CSS/JAVASCRIPT.
+# Todolist is a simple web app to write "things to do" on a list format. Made using HTML/CSS/JAVASCRIPT.
